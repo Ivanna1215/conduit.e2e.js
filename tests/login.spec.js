@@ -25,7 +25,6 @@ test.describe("User Authentication", () => {
     await loginPage.clickUserLoginLink();
     await loginPage.loginUser(invalidLoginData, "Sign in");
     await expect(loginPage.errorMessage).toBeVisible();
-    // Fix the error message assertion here based on the exact error text
-    await expect(loginPage.errorMessage).toContainText("email or password:is invalid"); // Removed the extra colon
+    await expect(loginPage.errorMessage).toContainText("email or password:is invalid");
   });
 });
